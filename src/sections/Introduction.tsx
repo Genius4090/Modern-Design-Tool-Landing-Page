@@ -15,12 +15,13 @@ export default function Introduction() {
         offset: ["start end", "end end"]
     });
     const [currentWord, setCurrentWord] = useState(0);
-const wordIndex = useTransform(scrollYProgress, [0, 1], [0, words.length])
+    const wordIndex = useTransform(scrollYProgress, [0, 1], [0, words.length])
 
     useEffect(()=>{
-        wordIndex.on('change', (latest) => {
-            setCurrentWord(latest);
+        const unsubscribe = wordIndex.on('change', (latest) => {
+            setCurrentWord(Math.floor(latest));
         })
+        return () => unsubscribe();
     },[wordIndex])
     return (
         <section className="py-28 lg:py-40">

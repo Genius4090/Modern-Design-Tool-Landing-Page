@@ -15,7 +15,15 @@ const integrations = [
     { name: "Framer", icon: framerIcon, description: "Framer is a professional website prototyping tool." },
     { name: "GitHub", icon: githubIcon, description: "GitHub is the leading platform for code collaboration." },
 ];
-export type IntegrationsType = typeof integrations;
+
+export type Integration = {
+    name: string;
+    icon: string;
+    description: string;
+};
+
+export type IntegrationsType = Integration[];
+
 export default function Integrations() {
     return (
         <section className="py-24 overflow-hidden ">
