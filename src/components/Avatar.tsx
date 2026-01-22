@@ -1,6 +1,5 @@
 import React, { HTMLAttributes } from "react";
-import Image from "next/image";
-import avatar1 from "@/assets/images/avatar-ashwin-santiago.jpg";
+
 import { twMerge } from "tailwind-merge";
 
 function Avatar(props: HTMLAttributes<HTMLDivElement>) {
